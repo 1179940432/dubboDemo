@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+spring:
+  dubbo:
+    application:   #应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。
+      name: consumer
+      id: consumer
+    registry:                 #注册中心配置，用于配置连接注册中心相关信息。
+      address: zookeeper://192.168.204.150:2181
+#      group: dubboGroup
+    protocol:     #协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受。
+      name: dubbo
+      port: 20880
+    consumer:
+      check: false
+#    scan: com.dubbo.customer.Test  #服务暴露与发现消费所在的package
